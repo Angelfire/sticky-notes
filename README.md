@@ -7,14 +7,13 @@
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
 
 ## Folder Structure
 
 After creation, your project should look like this:
 
 ```
-my-app/
+sticky-notes/
   README.md
   node_modules/
   package.json

@@ -64,8 +64,8 @@ class Board extends Component {
   eachNote(note) {
     return (
       <Note
-        key={note.id}
-        contentNote={note.note}
+        key={ note.id }
+        contentNote={ note.note }
       />
     );
   }

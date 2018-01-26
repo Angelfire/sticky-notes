@@ -1,45 +1,43 @@
 .add-sticky {
-    width: 400px;
-    margin: 20px auto;
-  }
+  width: 400px;
+  margin: 20px auto;
+}
   
-  .note_text {
-    display: block;
-    margin: 0;
-    width: 100%;
-    font-family: sans-serif;
-    font-size: 18px;
-    appearance: none;
-    box-shadow: none;
-    border-radius: none;
-    padding: 10px;
-    border: solid 3px #39b8a3;
-    transition: border 0s;
-  }
-  
-  .note_text:focus{
-    border: solid 3px #4895c4;
-  }
-  
-  .add_button{
-    border: none;
-    display: block;
-    margin: 10px auto;
-    width: 426px;
-    color: #fff;
-    font-size: 14px;
-    background: #39b8a3;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
-  
-  .add_button:hover{
-    background: #4895c4;
-    text-decoration: none;
-  }
-  
-  .notes {
-    height: 100%;
-    overflow: hidden;
-  }
-  
+.note_text {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+  border: solid 3px #39b8a3;
+}
+
+.note_text:focus{
+  border: solid 3px #4895c4;
+}
+
+.add_button{
+  border: none;
+  display: block;
+  margin: 10px auto;
+  width: 426px;
+  color: #fff;
+  font-size: 14px;
+  background: #39b8a3;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.add_button:hover{
+  background: #4895c4;
+  text-decoration: none;
+}
+
+.notes {
+  height: 100%;
+  overflow: hidden;
+}
