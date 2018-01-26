@@ -35,11 +35,9 @@ class Note extends Component {
   }
 
   render() {
-    const flipNote = this.state.showNote ? 'flip-note' : '';
-
     return (
         <div
-            className={ `note ${flipNote}` }
+            className="note"
             style={ this.style }
             onClick={ this.handleClick }
         >

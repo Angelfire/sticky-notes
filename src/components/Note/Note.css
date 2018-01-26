@@ -13,22 +13,17 @@
   margin: 0;
 }
 
-.front-note,
-.back-note {
+.front-note {
+  background: linear-gradient(#fefcaf, #fffeda);
   width: 100%;
   height: 100%;
+  padding: 5px 20px 10px;
   position: absolute;
   top: 0px;
   left: 0px;
-  backface-visibility: hidden;
   box-sizing: border-box;
-}
 
-.front-note {
-  background: linear-gradient(#fefcaf, #fffeda);
-  padding: 5px 20px 10px;
   z-index: 2;
-  transform: rotateY(0deg);
 }
 
 .cursor {
