@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+![Sticky Note](https://i.imgur.com/gG3qGvs.png)
 
 ## Table of Contents
 
