@@ -31,17 +31,6 @@
   transform: rotateY(0deg);
 }
 
-.back-note {
-  background-color: #b9dcf4;
-  z-index: 1;
-  transform: rotateY(180deg);
-}
-
-.back-note p {
-  color: white;
-  padding: 5px 20px 10px;
-}
-
 .cursor {
   background-image: url(https://cdn0.iconfinder.com/data/icons/hands-pt-3/100/051_-_drag-512.png);
   background-size: contain;
@@ -50,41 +39,4 @@
   position: absolute;
   right: 5px;
   width: 25px;
-}
-
-.faces {
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  width: 100%;
-}
-
-.note.flip-note .faces {
-  transform: rotateY(180deg);
-}
-
-.note.flip-note {
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  position: absolute;
-  top: 10px!important;
-  left: 10px!important;
-  right: auto!important;
-  margin: 0;
-  z-index: 2;
-  transform: none !important;
-}
-
-.icon-close {
-  color: white;
-  cursor: pointer;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-weight: bold;
-  font-size: 28px;
-  position: absolute;
-  top: 0;
-  right: 10px;
 }
