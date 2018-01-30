@@ -5,9 +5,6 @@ import './Note.css';
 class Note extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { showNote: false };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -24,27 +21,18 @@ class Note extends Component {
    * @param {*} s
    */
   randomBetween(x, y, s) {
-    return (x + Math.ceil(Math.random() * (y-x))) + s;
+    return (x + Math.ceil(Math.random() * (y - x))) + s;
   }
 
-  /**
-   * Show/hide front/back face
-   */
-
-  handleClick(evt) {
-    this.setState({ showNote: true });
-  }
 
   render() {
     return (
-      <Draggable handle=".cursor">
+      <Draggable>
         <div
             className="note"
             style={ this.style }
-            onClick={ this.handleClick }
         >
           <div className="front-note">
-            <div className="cursor"></div>
             <p>{ this.props.contentNote }</p>
           </div>
         </div>
