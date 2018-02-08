@@ -53,10 +53,14 @@ class Board extends Component {
     evt.preventDefault();
   }
 
-  removeNote = index => {
+  /**
+   * 
+   * @param {number} index
+   */
+  removeNote = i => {
     const arr = this.state.notes;
-    const ele = arr[index];
-    arr.splice(index, 1);
+    const ele = arr[i];
+    arr.splice(i, 1);
     this.setState({ notes: arr });
 
     return ele;
