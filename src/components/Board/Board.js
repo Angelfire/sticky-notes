@@ -10,16 +10,12 @@ class Board extends Component {
       notes: [],
       noteText: ''
     };
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.submitHandler = this.submitHandler.bind(this);
   }
 
   /**
    * Just a lazy ID creator
    */
-  nextId() {
+  nextId = () => {
     this.uniqueId = this.uniqueId || 0;
 
     return this.uniqueId++;
@@ -29,7 +25,7 @@ class Board extends Component {
    * Add Note
    * @param {*} text
    */
-  handleClick() {
+  handleClick = () => {
     let notes = [
       ...this.state.notes,
       {
@@ -38,14 +34,14 @@ class Board extends Component {
       }
     ];
 
-    this.setState({ notes })
+    this.setState({ notes });
   }
 
   /**
    * Set the value of each note
    * @param {*} evt
    */
-  handleChange(evt) {
+  handleChange = evt => {
     this.setState({ noteText: evt.target.value });
   }
 
@@ -53,7 +49,7 @@ class Board extends Component {
    * Prevent submit on enter
    * @param {*} evt
    */
-  submitHandler(evt) {
+  submitHandler = evt => {
     evt.preventDefault();
   }
 
@@ -61,7 +57,7 @@ class Board extends Component {
    * Render each note
    * @param {*} note
    */
-  eachNote(note) {
+  eachNote = note => {
     return (
       <Note
         key={ note.id }

@@ -3,13 +3,6 @@ import Draggable from 'react-draggable';
 import './Note.css';
 
 class Note extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { showNote: false };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
   componentWillMount() {
     this.style = {
       right: this.randomBetween(0, window.innerWidth - 200, 'px'),
@@ -23,16 +16,8 @@ class Note extends Component {
    * @param {*} y
    * @param {*} s
    */
-  randomBetween(x, y, s) {
+  randomBetween = (x, y, s) => {
     return (x + Math.ceil(Math.random() * (y-x))) + s;
-  }
-
-  /**
-   * Show/hide front/back face
-   */
-
-  handleClick(evt) {
-    this.setState({ showNote: true });
   }
 
   render() {
