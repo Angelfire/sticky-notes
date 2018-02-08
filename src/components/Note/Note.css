@@ -1,10 +1,14 @@
 .note {
   height: 250px;
-  margin: 30px auto;
+  margin: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
   border-radius: 2% / 50%;
   position: absolute;
   width: 250px;
+}
+
+.note:hover {
+  cursor: pointer;
 }
 
 .note p {
@@ -22,16 +26,12 @@
   top: 0;
   left: 0;
   box-sizing: border-box;
-
   z-index: 2;
 }
 
-.cursor {
-  background-image: url(https://cdn0.iconfinder.com/data/icons/hands-pt-3/100/051_-_drag-512.png);
-  background-size: contain;
-  cursor: move;
-  height: 25px;
+.delete-sticky{
+  font-family: 'Gloria Hallelujah', cursive;
   position: absolute;
-  right: 5px;
-  width: 25px;
+  right: 10px;
+  top: 0;
 }

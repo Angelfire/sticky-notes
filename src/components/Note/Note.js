@@ -6,8 +6,13 @@ class Note extends Component {
   componentWillMount() {
     this.style = {
       right: this.randomBetween(0, window.innerWidth - 200, 'px'),
-      top: this.randomBetween(0, window.innerHeight - 200, 'px')
+      top: this.randomBetween(0, window.innerHeight - 450, 'px')
     };
+  }
+
+  handleClose = () => {
+    const { onRemove, index } = this.props;
+    onRemove(index);
   }
 
   /**
@@ -17,19 +22,18 @@ class Note extends Component {
    * @param {*} s
    */
   randomBetween = (x, y, s) => {
-    return (x + Math.ceil(Math.random() * (y-x))) + s;
+    return (x + Math.ceil(Math.random() * (y - x))) + s;
   }
 
   render() {
     return (
-      <Draggable handle=".cursor">
+      <Draggable bounds=".board">
         <div
             className="note"
             style={ this.style }
-            onClick={ this.handleClick }
         >
           <div className="front-note">
-            <div className="cursor"></div>
+            <span className="delete-sticky" onClick={ this.handleClose }>X</span>
             <p>{ this.props.contentNote }</p>
           </div>
         </div>

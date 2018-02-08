@@ -53,15 +53,26 @@ class Board extends Component {
     evt.preventDefault();
   }
 
+  removeNote = index => {
+    const arr = this.state.notes;
+    const ele = arr[index];
+    arr.splice(index, 1);
+    this.setState({ notes: arr });
+
+    return ele;
+  }
+
   /**
    * Render each note
    * @param {*} note
    */
-  eachNote = note => {
+  eachNote = (note, i) => {
     return (
       <Note
         key={ note.id }
         contentNote={ note.note }
+        index={ i }
+        onRemove= { this.removeNote }
       />
     );
   }
