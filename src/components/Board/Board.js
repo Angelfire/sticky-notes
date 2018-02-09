@@ -105,6 +105,7 @@ class Board extends Component {
             className="note_text"
             placeholder="Sticky Note text"
             onChange={ this.handleChange }
+            maxLength="115"
           />
           <input
             type="button"
