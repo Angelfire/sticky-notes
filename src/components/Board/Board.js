@@ -52,6 +52,7 @@ class Board extends Component {
    */
   submitHandler = evt => {
     evt.preventDefault();
+    this.handleClick();
   }
 
   /**
