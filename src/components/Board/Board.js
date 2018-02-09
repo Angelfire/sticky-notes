@@ -34,8 +34,9 @@ class Board extends Component {
       }
     ];
 
-    this.setState({ notes });
+    this.setState({ notes, noteText: '' });
     saveState(notes);
+    this.textInput.value = ''
   }
 
   /**
@@ -84,6 +85,10 @@ class Board extends Component {
     );
   }
 
+  componentDidMount () {
+    this.textInput.focus()
+  }
+
   componentWillMount() {
     loadState() && this.setState({
       notes: loadState()
@@ -96,6 +101,7 @@ class Board extends Component {
         <form className="add-sticky" onSubmit={ this.submitHandler }>
           <input
             type="text"
+            ref={input => { this.textInput = input }}
             className="note_text"
             placeholder="Sticky Note text"
             onChange={ this.handleChange }
