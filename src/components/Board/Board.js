@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { loadState, saveState } from '../../utils/helpers';
+import { s4 } from '../../utils/helpers';
 import Note from '../Note/Note';
 import './Board.css';
 
@@ -15,26 +17,25 @@ class Board extends Component {
   /**
    * Just a lazy ID creator
    */
-  nextId = () => {
-    this.uniqueId = this.uniqueId || 0;
-
-    return this.uniqueId++;
+  getUniqueIdentifier = () => {
+    return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
   }
 
   /**
-   * Add Note
+   * Add Note and save it to localstorage
    * @param {*} text
    */
   handleClick = () => {
     let notes = [
       ...this.state.notes,
       {
-        id: this.nextId(),
+        id: this.getUniqueIdentifier(),
         note: this.state.noteText
       }
     ];
 
     this.setState({ notes });
+    saveState(notes);
   }
 
   /**
@@ -53,11 +54,16 @@ class Board extends Component {
     evt.preventDefault();
   }
 
-  removeNote = index => {
+  /**
+   * Remove note and remove it from localStorage
+   * @param {number} index
+   */
+  removeNote = i => {
     const arr = this.state.notes;
-    const ele = arr[index];
-    arr.splice(index, 1);
+    const ele = arr[i];
+    arr.splice(i, 1);
     this.setState({ notes: arr });
+    saveState(arr);
 
     return ele;
   }
@@ -75,6 +81,12 @@ class Board extends Component {
         onRemove= { this.removeNote }
       />
     );
+  }
+
+  componentWillMount() {
+    loadState() && this.setState({
+      notes: loadState()
+    })
   }
 
   render() {
