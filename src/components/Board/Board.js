@@ -53,6 +53,10 @@ class Board extends Component {
     evt.preventDefault();
   }
 
+  /**
+   * Delete a note based on its index
+   * @param {} index
+   */
   removeNote = index => {
     const arr = this.state.notes;
     const ele = arr[index];
@@ -64,7 +68,8 @@ class Board extends Component {
 
   /**
    * Render each note
-   * @param {*} note
+   * @param {object} note
+   * @param {number} index
    */
   eachNote = (note, i) => {
     return (
