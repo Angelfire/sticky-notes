@@ -26,8 +26,7 @@ class Board extends Component {
    * 
    */
   handleCheck = () => {
-    const { checked } = this.state;
-    this.setState({ checked: true });
+     this.setState({ checked: !this.state.checked });
   }
 
   /**
@@ -35,18 +34,20 @@ class Board extends Component {
    * @param {*} text
    */
   handleClick = () => {
+    const { noteText, checked } = this.state;
+
     let notes = [
       ...this.state.notes,
       {
         id: this.getUniqueIdentifier(),
-        note: this.state.noteText,
-        checked: this.state.checked
+        note: noteText,
+        checked: checked
       }
     ];
 
     this.setState({ notes, noteText: '', checked: false });
     saveState(notes);
-    this.textInput.value = ''
+    this.textInput.value = '';
   }
 
   /**
@@ -108,7 +109,6 @@ class Board extends Component {
   }
 
   render() {
-    console.log(this.state.checked);
     return (
       <div className="board">
         <form className="add-sticky" onSubmit={ this.submitHandler }>
@@ -129,11 +129,12 @@ class Board extends Component {
           <div className="hp-note">
             <input
               type="checkbox"
+              checked = {this.state.checked}
               name="e-note"
               value="e-note"
-              onChange={ this.handleCheck }
+              onChange={this.handleCheck}
             />
-            <label htmlFor="e-note">High Priority</label>
+            <label htmlFor="e-note">Important note</label>
           </div>
         </form>
         <div className="notes">
