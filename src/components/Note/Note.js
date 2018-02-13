@@ -29,13 +29,16 @@ class Note extends Component {
   }
 
   render() {
+    const { checked } = this.props;
+    const colorClass = checked ? 'e-note' : 'n-note';
+
     return (
       <Draggable bounds=".board">
         <div
             className="note"
             style={ this.style }
         >
-          <div className="front-note">
+          <div className={`front-note ${colorClass}`}>
             <span className="delete-sticky" onClick={ this.handleClose }>X</span>
             <p>{ this.props.contentNote }</p>
           </div>
