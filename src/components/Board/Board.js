@@ -10,7 +10,8 @@ class Board extends Component {
 
     this.state = {
       notes: [],
-      noteText: ''
+      noteText: '',
+      checked: false
     };
   }
 
@@ -22,21 +23,31 @@ class Board extends Component {
   }
 
   /**
+   * 
+   */
+  handleCheck = () => {
+     this.setState({ checked: !this.state.checked });
+  }
+
+  /**
    * Add Note and save it to localstorage
    * @param {*} text
    */
   handleClick = () => {
+    const { noteText, checked } = this.state;
+
     let notes = [
       ...this.state.notes,
       {
         id: this.getUniqueIdentifier(),
-        note: this.state.noteText
+        note: noteText,
+        checked: checked
       }
     ];
 
-    this.setState({ notes, noteText: '' });
+    this.setState({ notes, noteText: '', checked: false });
     saveState(notes);
-    this.textInput.value = ''
+    this.textInput.value = '';
   }
 
   /**
@@ -81,19 +92,20 @@ class Board extends Component {
         key={ note.id }
         contentNote={ note.note }
         index={ i }
-        onRemove= { this.removeNote }
+        onRemove={ this.removeNote }
+        checked={ note.checked }
       />
     );
   }
 
   componentDidMount () {
-    this.textInput.focus()
+    this.textInput.focus();
   }
 
   componentWillMount() {
     loadState() && this.setState({
       notes: loadState()
-    })
+    });
   }
 
   render() {
@@ -114,6 +126,16 @@ class Board extends Component {
             value="Add Sticky Note"
             onClick={ this.handleClick }
           />
+          <div className="hp-note">
+            <input
+              type="checkbox"
+              checked = {this.state.checked}
+              name="e-note"
+              value="e-note"
+              onChange={this.handleCheck}
+            />
+            <label htmlFor="e-note">Important note</label>
+          </div>
         </form>
         <div className="notes">
           { this.state.notes.map(this.eachNote) }

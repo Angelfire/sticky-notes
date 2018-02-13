@@ -1,13 +1,14 @@
 .add-sticky {
-  width: 400px;
   margin:0 auto;
   padding-top: 20px;
+  position: relative;
+  width: 400px;
 }
   
 .note_text {
   display: block;
   margin: 0;
-  width: 100%;
+  width: 374px;
   font-family: sans-serif;
   font-size: 18px;
   box-shadow: none;
@@ -24,7 +25,7 @@
   border: none;
   display: block;
   margin: 10px auto;
-  width: 426px;
+  width: 400px;
   color: #fff;
   font-size: 14px;
   background: #39b8a3;
@@ -35,6 +36,19 @@
 .add_button:hover{
   background: #4895c4;
   text-decoration: none;
+}
+
+.hp-note {
+  background-color: #fff;
+  position: absolute;
+  top: 20px;
+  right: -110px;
+  padding: 0 3px;
+}
+
+.hp-note label {
+  font-size: 12px;
+  vertical-align: text-top;
 }
 
 .board {
