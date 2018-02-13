@@ -10,9 +10,8 @@
   width: 100%;
   font-family: sans-serif;
   font-size: 18px;
-  appearance: none;
   box-shadow: none;
-  border-radius: none;
+  border-radius: 0;
   padding: 10px;
   border: solid 3px #39b8a3;
 }
