@@ -72,7 +72,8 @@ class Board extends Component {
 
   /**
    * Render each note
-   * @param {*} note
+   * @param {object} note
+   * @param {number} index
    */
   eachNote = (note, i) => {
     return (

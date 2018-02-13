@@ -10,6 +10,9 @@ class Note extends Component {
     };
   }
 
+  /**
+   * 
+   */
   handleClose = () => {
     const { onRemove, index } = this.props;
     onRemove(index);
